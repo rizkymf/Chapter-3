@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.InputMismatchException;
+
 public class DemoUnitTest {
 
     UnitTest unitTest;
@@ -84,6 +86,12 @@ public class DemoUnitTest {
         String hasil = Assertions.assertDoesNotThrow(() -> unitTest.appender(3));
         Assertions.assertTrue(hasil.equals("ganjil"));
         Assertions.assertNotNull(hasil);
+    }
+
+    @Test
+    public void testAppender_failed_inputMismatch() {
+        System.out.println("testAppender_failed_null");
+        Assertions.assertThrows(InputMismatchException.class, () -> unitTest.appender(null));
     }
 
 }
