@@ -3,6 +3,7 @@ package org.binaracademy.sabtu;
 import org.binaracademy.topic2.Nasabah;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class NasabahServiceImplDua implements NasabahService {
     @Override
@@ -28,5 +29,10 @@ public class NasabahServiceImplDua implements NasabahService {
     @Override
     public Long networthSatuNasabah(Nasabah nasabah) {
         return null;
+    }
+
+    @Override
+    public void inputScanner(Scanner scanner) {
+
     }
 }

@@ -7,6 +7,8 @@ import org.binaracademy.topic2.Nasabah;
 import org.binaracademy.topic2.NetworthService;
 import org.binaracademy.topic2.NetworthServiceImpl;
 import org.binaracademy.topic3.Robot;
+import org.binaracademy.topic4.Orders;
+import org.binaracademy.topic4.StreamDemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,5 +55,23 @@ public class Main {
 //        nasabahPria.forEach(nasabah -> System.out.println(nasabah.getNama()));
 
         // input 1 >> Nasi Goreng
+
+        StreamDemo streamDemo = new StreamDemo();
+        List<String> namaNilai = streamDemo.namaNilai(Arrays.asList(100, 90, 85, 90, 95), Arrays.asList("Budy", "Udin", "Sabrina", "Mas Gun", "Ariel"));
+//        namaNilai.forEach(System.out::println);
+
+        List<String> name = Arrays.asList(null, "Sabrina", "", "Udin", "Budy", "       ", "Mas Gun");
+        streamDemo.bikinStream();
+
+        System.out.println("-------------------------------------");
+        List<String> orderedName = streamDemo.ordering(name);
+        orderedName.forEach(System.out::println);
+        streamDemo.reverseOrdering(name).forEach(System.out::println);
+
+        List<Orders> ordersList = Arrays.asList(Orders.builder().harga(10000).namaPesanan("Nasi Goreng").quantity(10).build(),
+                Orders.builder().harga(5000).namaPesanan("Es Jeruk").quantity(10).build());
+        System.out.println("Total pesanan anda : Rp." + streamDemo.hitungTotal(ordersList));
+        System.out.println("Any Match : " + streamDemo.demoAnyMatch(name, "S"));
+        System.out.println("All Match : " + streamDemo.demoAllMatch(name, "S"));
     }
 }
