@@ -1,5 +1,8 @@
 package org.binaracademy;
 
+import org.binaracademy.sabtu.NasabahService;
+import org.binaracademy.sabtu.NasabahServiceImpl;
+import org.binaracademy.sabtu.OrderService;
 import org.binaracademy.topic2.Nasabah;
 import org.binaracademy.topic2.NetworthService;
 import org.binaracademy.topic2.NetworthServiceImpl;
@@ -42,5 +45,13 @@ public class Main {
         );
         Long totalNetworthSemuaWanita = networthService.calculateNetworthAllWanita(nasabahList);
         System.out.println("total networth semua wanita : Rp." + totalNetworthSemuaWanita);
+
+        System.out.println("------------------------------------------");
+
+        List<String> orders;
+//        List<Nasabah> nasabahPria = nasabahService.getSemuaNasabahPria(nasabahList);
+//        nasabahPria.forEach(nasabah -> System.out.println(nasabah.getNama()));
+
+        // input 1 >> Nasi Goreng
     }
 }

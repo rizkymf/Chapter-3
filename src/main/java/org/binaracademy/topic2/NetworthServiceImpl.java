@@ -1,9 +1,11 @@
 package org.binaracademy.topic2;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class NetworthServiceImpl implements NetworthService {
 
