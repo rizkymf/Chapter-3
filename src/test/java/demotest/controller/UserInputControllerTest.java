@@ -42,6 +42,11 @@ public class UserInputControllerTest {
 
     @Test
     void testInputMainMenu_pesanMakanan() {
+        Invoice invoiceExpected = Invoice.builder()
+                .pesananList(Arrays.asList(new Pesanan("Nasi Goreng", 2, 30000),
+                        new Pesanan("Es Teh Manis", 3, 15000)))
+                .totalPembayaran(45000)
+                .build();
         String userInput = "1\n2\n" +
                 "3\n3\n" +
                 "99\n";
@@ -52,10 +57,11 @@ public class UserInputControllerTest {
         Invoice invoice = assertDoesNotThrow(() -> userInputController.inputMainMenu());
         assertEquals(2, invoice.getPesananList().size());
         assertEquals(45000, invoice.getTotalPembayaran());
-        invoice.getPesananList().forEach(pesanan -> {
-            assertTrue(!pesanan.getNamaProduk().isEmpty());
-            assertTrue(pesanan.getQuantity() > 0);
-        });
+        assertEquals(invoiceExpected, invoice);
+//        invoice.getPesananList().forEach(pesanan -> {
+//            assertTrue(!pesanan.getNamaProduk().isEmpty());
+//            assertTrue(pesanan.getQuantity() > 0);
+//        });
     }
 
     @Test
