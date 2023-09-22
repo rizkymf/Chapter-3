@@ -13,5 +13,4 @@ public class Orders {
     private String namaPesanan;
     private Integer harga;
     private Integer quantity;
-    private String pemesan;
 }
